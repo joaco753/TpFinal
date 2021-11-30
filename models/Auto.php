@@ -7,7 +7,6 @@ class Auto {
 	private $anio;
 	private $precio;
 
-	// esto deberia estar tambien en el Controlador Pagina para facilitar las cosas...
 	public function __construct($id, $marca, $modelo, $anio,$precio) {
 		$this -> id = $id;
 		$this -> marca = $marca;
@@ -26,7 +25,6 @@ class Auto {
 		$i = 0;
 		$listarAutos = [];
 		$conexion = BD::crearConexion();
-		// estuve haciendo al reves xd
 		$consulta = $queryId ? "SELECT * FROM autos WHERE id = '$queryId'" : "SELECT * FROM autos";
 		if ($resultado = mysqli_query($conexion, $consulta)) {
 			while ($autos= $resultado->fetch_object()) {
@@ -48,7 +46,6 @@ class Auto {
 		}
 	}
 
-	//creo que en esa funcion solo necesito el id---preguntar saek
 	public static function editar($id, $marca, $modelo, $anio,$precio){
 		$conexion = BD::crearConexion();
 		$query = "UPDATE autos SET 
@@ -64,23 +61,15 @@ class Auto {
 		}
 	}
 
-	//preguntar saek otra vez sobre lo del new auto // ah esto faltaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAA
 	public static function buscar($id){
-		//Obtenemos una conexion a la base de datos
 		$conexion = BD::crearConexion();
-		//Armamos la consulta que sera ejecutada en la base de datos
 		$query = "SELECT * FROM autos WHERE id = '$id' ";
-		//Ejecutamos la consulta
 		$resultado = mysqli_query($conexion, $query);
 
-		//Vericamos que se halla ejecutado correctamente la consulta
 		if($resultado){
-			//Verificamos que halla encontrado un resultado
 			if (mysqli_num_rows($resultado) > 0){
-				//Obtenemos el resultado como un objeto
 				$autos = $resultado->fetch_object();
 
-				//Devolvemos un objeto del tipo Producto
 				return new Auto($autos->id, $autos->marca, $autos->modelo, $autos -> anio,$autos->precio);
 			}
 			else{
@@ -92,12 +81,11 @@ class Auto {
 			echo "Hubo un error al buscar el producto: ".mysqli_error($conexion);
 		}
 	}
-	//preguntar saek que mierda estoy haciendo no entiendo nada
+
 	public static function registrar($marca, $modelo, $anio, $precio){
 		
 		$conexion = BD::crearConexion();
 
-		// Codigo SQL para insertar datos en la tabla personas 
 		$query = "INSERT INTO autos (marca, modelo, anio, precio) values ('$marca','$modelo','$anio', '$precio')";
 		$exito = mysqli_query($conexion, $query);
 		

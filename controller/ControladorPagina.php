@@ -1,5 +1,4 @@
 <?php
-    // La ruta de los archivos son relativos al directorio donde se encuentra el index.php
     include_once "./controller/conexion.php";
     include_once "./models/Auto.php";
 
@@ -26,10 +25,8 @@
 
             if( isset($_GET['accion']) ){
                 
-                //Obtenemos el valor del boton del menu que se apreto
                 $accion = $_GET['accion'];
                 
-                //Llamamos al metodo que tenga el mismo nombre que la accion 
                 return $this->$accion();
             }
             else{

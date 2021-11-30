@@ -3,7 +3,7 @@
     <div id="hero_panel_izquierda" class="flex-1">
       <h2 id="hero_titulo" class="text-3xl text-blue-600 font-bold mb-2">Bienvenido</h2>
       <p id="hero_parrafo" class="text-xl text-blue-900">
-        Esta es una pagina en la que podes vender, editar o añadir autos.
+        Consecionaria profesional con años de trayecto, confiabilidad y legalidad.
       </p>        
     </div>
     <div id="hero_panel_derecha" class="flex-1">
