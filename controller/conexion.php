@@ -1,15 +1,11 @@
 <?php 
 	class BD{
-
-        //atributo estatico donde guardaremos la conexion
         private static $conexion=NULL;
 
         public static function crearConexion(){
 
-            //Verificamos que la conexion no este creada
             if(!isset( self::$conexion)){
 
-                //Si no esta creada pasamos a crearla
                 self::$conexion = mysqli_connect("localhost","root", "root", "consecionaria");
 
                 // Chequea la coneccion
