@@ -1,5 +1,4 @@
 <?php
-    // La ruta de los archivos son relativos al directorio donde se encuentra el index.php
     include_once "./controller/conexion.php";
     include_once "./models/Auto.php";
 
