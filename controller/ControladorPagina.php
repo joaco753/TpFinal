@@ -25,10 +25,8 @@
 
             if( isset($_GET['accion']) ){
                 
-                //Obtenemos el valor del boton del menu que se apreto
                 $accion = $_GET['accion'];
                 
-                //Llamamos al metodo que tenga el mismo nombre que la accion 
                 return $this->$accion();
             }
             else{
