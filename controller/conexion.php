@@ -8,7 +8,6 @@
 
                 self::$conexion = mysqli_connect("localhost","root", "root", "consecionaria");
 
-                // Chequea la coneccion
                 if (!self::$conexion) {
                     die("La conexion fallo: " . mysqli_connect_error());
                 }
